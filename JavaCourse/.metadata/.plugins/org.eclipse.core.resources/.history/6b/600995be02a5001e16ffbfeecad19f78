@@ -1,0 +1,8 @@
+package org.larcher.poo_clases_abstractas.elementos;
+
+public class EjemploForm {
+
+	public static void main(String[] args) {
+		
+	}
+}
