@@ -1,6 +1,7 @@
 package org.larcher.poo_clases_abstractas.elementos;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.larcher.poo_clases_abstractas.elementos.select.Options;
@@ -21,11 +22,11 @@ public class EjemploForm {
 		
 		Options java = new  Options("1", "java");
 		
-		language.addOption(java)
-		.addOption(new Options("2", "python"))
-		.addOption(new Options("3", "Javascript"))
-		.addOption(new Options("4", "Typescript"))
-		.addOption(new Options("5", "Rust"));
+		language.addOption(java);
+		language.addOption(new Options("2", "python"));
+		language.addOption(new Options("3", "Javascript"));
+		language.addOption(new Options("4", "Typescript"));
+		language.addOption(new Options("5", "Rust"));
 		
 		
 		

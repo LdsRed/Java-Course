@@ -1,8 +1,5 @@
 package org.larcher.poo_clases_abstractas.elementos;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.larcher.poo_clases_abstractas.elementos.select.Options;
 
 public class EjemploForm {
@@ -21,11 +18,11 @@ public class EjemploForm {
 		
 		Options java = new  Options("1", "java");
 		
-		language.addOption(java)
-		.addOption(new Options("2", "python"))
-		.addOption(new Options("3", "Javascript"))
-		.addOption(new Options("4", "Typescript"))
-		.addOption(new Options("5", "Rust"));
+		language.addOption(java);
+		language.addOption(new Options("2", "python"));
+		language.addOption(new Options("3", "Javascript"));
+		language.addOption(new Options("4", "Typescript"));
+		language.addOption(new Options("5", "Rust"));
 		
 		
 		
@@ -35,19 +32,5 @@ public class EjemploForm {
 		edad.setValor("28");
 		experiencia.setValor("...mas de 50 años de experiencia...");
 		java.setSelected(true);
-		
-		
-		List<ElementoForm> elementos = new ArrayList<>();
-		
-		elementos.add(username);
-		elementos.add(password);
-		elementos.add(email);
-		elementos.add(edad);
-		elementos.add(experiencia);
-		
-		for(ElementoForm e: elementos) {
-			System.out.println(e.dibujarHtml());
-		}
-		
 	}
 }
