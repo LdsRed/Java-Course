@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="org.larcher.poo_clases_abstractas.form.validador.Validador"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="org.larcher.poo_clases_abstractas.form.validador.LargoValidador"/>
+    <fullyQualifiedTypeName name="org.larcher.poo_clases_abstractas.elementos.InputForm"/>
+    <fullyQualifiedTypeName name="org.larcher.poo_clases_abstractas.form.validador.RequeridoValidador"/>
+    <fullyQualifiedTypeName name="org.larcher.poo_clases_abstractas.elementos.ElementoForm"/>
+</qualifiedTypeNameHistroy>

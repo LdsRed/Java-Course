@@ -1,14 +1,22 @@
 package org.larcher.poo_clases_abstractas.elementos;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.larcher.poo_clases_abstractas.form.validador.Validador;
+
 public abstract class ElementoForm {
 	
 	
 	protected String valor;
 	protected String nombre; 
+	private List<Validador> validadores;
+	private List<String> errores;
 	
 	
 	public ElementoForm() {
-
+		this.validadores = new ArrayList<Validador>();
+		this.errores = new ArrayList<String>();
 	}
 
 	
@@ -29,6 +37,24 @@ public abstract class ElementoForm {
 
 	public void setValor(String valor) {
 		this.valor = valor;
+	}
+	
+	public List<String> getErrores(){
+		return errores;
+	}
+	public ElementoForm addValidador(Validador validador) {
+		this.validadores.add(validador);
+		return this;
+	}
+	
+	public boolean isValid() {
+		for(Validador v: validadores) {
+			if(!v.isValid(this.valor)) {
+				this.errores.add(String.format(v.getMessage(), nombre));
+			}
+		}
+		
+		return this.errores.isEmpty();
 	}
 
 

@@ -4,14 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.larcher.poo_clases_abstractas.elementos.select.Options;
+import org.larcher.poo_clases_abstractas.form.validador.EmailValidador;
+import org.larcher.poo_clases_abstractas.form.validador.LargoValidador;
+import org.larcher.poo_clases_abstractas.form.validador.RequeridoValidador;
 
 public class EjemploForm {
 
 	public static void main(String[] args) {
 	
 		InputForm username = new InputForm("username");
+		username.addValidador(new RequeridoValidador());
 		InputForm password = new InputForm("clave","password");
+		password.addValidador(new RequeridoValidador())
+		.addValidador(new LargoValidador(5, 12));
+		
 		InputForm email = new InputForm("email", "email");
+		email.addValidador(new RequeridoValidador())
+		.addValidador(new EmailValidador());
 		InputForm edad = new InputForm("edad", "number");
 		
 		
@@ -37,6 +46,14 @@ public class EjemploForm {
 		java.setSelected(true);
 		
 		
+		ElementoForm saludar = new ElementoForm() {
+			
+			@Override
+			public String dibujarHtml() {
+				return "";//"<input disabled name='"+this.nombre+"' value \"" + this.valor>"
+			}
+		};
+		
 		List<ElementoForm> elementos = new ArrayList<>();
 		
 		elementos.add(username);
@@ -47,7 +64,14 @@ public class EjemploForm {
 		
 		for(ElementoForm e: elementos) {
 			System.out.println(e.dibujarHtml());
+			System.out.println("<br>");
 		}
+		
+		elementos.forEach(e -> {
+			if(!e.isValid()) {
+				e.getErrores().forEach(System.out::println);
+			}
+		});
 		
 	}
 }

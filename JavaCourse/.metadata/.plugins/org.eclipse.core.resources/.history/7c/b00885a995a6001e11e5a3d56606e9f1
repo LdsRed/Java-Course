@@ -1,0 +1,5 @@
+package org.larcher.poo_clases_abstractas.form.validador;
+
+public class NoNuloValidador {
+
+}

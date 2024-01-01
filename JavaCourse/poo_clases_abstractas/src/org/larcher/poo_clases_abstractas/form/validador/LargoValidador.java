@@ -1,0 +1,51 @@
+package org.larcher.poo_clases_abstractas.form.validador;
+
+public class LargoValidador extends Validador{
+
+	protected String message = "El campo %s debe tener mínimo %d caracteres y máximo %d caracteres";
+	private int min = 0;
+	private int max = Integer.MAX_VALUE;
+	
+
+	public LargoValidador() {
+		
+	}
+	
+
+	public LargoValidador(int min, int max) {
+	
+		this.min = min;
+		this.max = max;
+	}
+	
+	public void setMinValue(int min) {
+		this.min = min;
+	}
+
+	public void setMaxValue(int max) {
+		this.max = max;
+	}
+
+	@Override
+	public void setMessage(String message) {
+		this.message = message;
+		
+	}
+
+	@Override
+	public String getMessage() {
+		
+		return message;
+	}
+
+	@Override
+	public boolean isValid(String value) {
+		this.message = String.format(this.message, this.min, this.max);
+		if(value == null) {
+			return true;
+		}
+		int largo = value.length();
+		return (largo >= min && largo <= max);
+		
+	}
+}

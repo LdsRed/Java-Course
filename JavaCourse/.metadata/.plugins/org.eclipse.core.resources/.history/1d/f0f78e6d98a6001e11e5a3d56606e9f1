@@ -1,0 +1,27 @@
+package org.larcher.poo_clases_abstractas.form.validador;
+
+public class LargoValidador extends Validador{
+
+	protected String message = "";
+	private int min = 0;
+	private int max = Integer.MAX_VALUE;
+	
+
+	@Override
+	public void setMessage(String message) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String getMessage() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean isValid(String value) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+}
